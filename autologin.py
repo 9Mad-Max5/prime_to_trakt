@@ -71,19 +71,19 @@ def crawl_amazon(page, username, password, otp=None):
     )
     auth_button.click()
 
-    # Warte, bis das div-Element mit dem Attribut 'data-automation-id="watch-history"' vorhanden ist
-    watch_history_div = WebDriverWait(driver, sel_timeout).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-automation-id="watch-history"]'))
-    )
+    # # Warte, bis das div-Element mit dem Attribut 'data-automation-id="watch-history"' vorhanden ist
+    # watch_history_div = WebDriverWait(driver, sel_timeout).until(
+    #     EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-automation-id="watch-history"]'))
+    # )
 
-    # Warte bis mindestens eine Checkbox gefunden wird
-    checkboxes = WebDriverWait(watch_history_div, sel_timeout).until(
-        EC.presence_of_all_elements_located((By.XPATH, './/input[@type="checkbox"]'))
-    )
+    # # Warte bis mindestens eine Checkbox gefunden wird
+    # checkboxes = WebDriverWait(watch_history_div, sel_timeout).until(
+    #     EC.presence_of_all_elements_located((By.XPATH, './/input[@type="checkbox"]'))
+    # )
 
-    # Klicke jede Checkbox an
-    for checkbox in checkboxes:
-        checkbox.click()
+    # # Klicke jede Checkbox an
+    # for checkbox in checkboxes:
+    #     checkbox.click()
 
 
     # Greife auf den HTML-Quellcode der Seite zu

@@ -1,0 +1,764 @@
+{
+  "__type": "atv.wps#ActivityHistoryOutput",
+  "content": {
+    "__type": "atv.wps#ActivityHistoryItems",
+    "nextToken": "eyJ2ZXJzaW9uIjoiVjEiLCJwYWdpbmF0aW9uSW5mbyI6ImV5SjBhVzFsVTNSaGJYQWlPakUyT1RrNU9UWTBNRFl1TWpRMk5qUXpNREF3TENKb2IzUlRkRzl5WVdkbFVHRm5hVzVoZEdsdmJsUnZhMlZ1SWpwN0lsQnliMlpwYkdWSlpDSTZleUp6SWpvaVFURTJORVZCTTBjeU1ETkhNREVpTENKdUlqcHVkV3hzTENKaUlqcHVkV3hzTENKdElqcHVkV3hzTENKc0lqcHVkV3hzTENKemN5STZiblZzYkN3aWJuTWlPbTUxYkd3c0ltSnpJanB1ZFd4c0xDSnVkV3hzSWpwdWRXeHNMQ0ppYjI5c0lqcHVkV3hzZlN3aVNHbGtaR1Z1TFUxdlpHbG1hV1ZrUkdGMFpTSTZleUp6SWpvaU1DMHlNREl3TFRFeUxURTRWREl5T2pVMk9qQXhMakE1TlRBM05sb2lMQ0p1SWpwdWRXeHNMQ0ppSWpwdWRXeHNMQ0p0SWpwdWRXeHNMQ0pzSWpwdWRXeHNMQ0p6Y3lJNmJuVnNiQ3dpYm5NaU9tNTFiR3dzSW1KeklqcHVkV3hzTENKdWRXeHNJanB1ZFd4c0xDSmliMjlzSWpwdWRXeHNmU3dpVUhKdlptbHNaVWxrTFZScGRHeGxTV1FpT25zaWN5STZJa0V4TmpSRlFUTkhNakF6UnpBeExXRnRlbTR4TG1SMkxtZDBhUzVpTUdJNU9XUmtZeTFoTXpZeUxXTmpPREF0TXpVeU1pMDJaRGMxTVRCbE9HTXlaV1FpTENKdUlqcHVkV3hzTENKaUlqcHVkV3hzTENKdElqcHVkV3hzTENKc0lqcHVkV3hzTENKemN5STZiblZzYkN3aWJuTWlPbTUxYkd3c0ltSnpJanB1ZFd4c0xDSnVkV3hzSWpwdWRXeHNMQ0ppYjI5c0lqcHVkV3hzZlgxOSJ9",
+    "seeMoreLink": {
+      "href": "/gp/video/settings/watch-history/ref=atv_set_wh?nextToken=eyJ2ZXJzaW9uIjoiVjEiLCJwYWdpbmF0aW9uSW5mbyI6ImV5SjBhVzFsVTNSaGJYQWlPakUyT1RrNU9UWTBNRFl1TWpRMk5qUXpNREF3TENKb2IzUlRkRzl5WVdkbFVHRm5hVzVoZEdsdmJsUnZhMlZ1SWpwN0lsQnliMlpwYkdWSlpDSTZleUp6SWpvaVFURTJORVZCTTBjeU1ETkhNREVpTENKdUlqcHVkV3hzTENKaUlqcHVkV3hzTENKdElqcHVkV3hzTENKc0lqcHVkV3hzTENKemN5STZiblZzYkN3aWJuTWlPbTUxYkd3c0ltSnpJanB1ZFd4c0xDSnVkV3hzSWpwdWRXeHNMQ0ppYjI5c0lqcHVkV3hzZlN3aVNHbGtaR1Z1TFUxdlpHbG1hV1ZrUkdGMFpTSTZleUp6SWpvaU1DMHlNREl3TFRFeUxURTRWREl5T2pVMk9qQXhMakE1TlRBM05sb2lMQ0p1SWpwdWRXeHNMQ0ppSWpwdWRXeHNMQ0p0SWpwdWRXeHNMQ0pzSWpwdWRXeHNMQ0p6Y3lJNmJuVnNiQ3dpYm5NaU9tNTFiR3dzSW1KeklqcHVkV3hzTENKdWRXeHNJanB1ZFd4c0xDSmliMjlzSWpwdWRXeHNmU3dpVUhKdlptbHNaVWxrTFZScGRHeGxTV1FpT25zaWN5STZJa0V4TmpSRlFUTkhNakF6UnpBeExXRnRlbTR4TG1SMkxtZDBhUzVpTUdJNU9XUmtZeTFoTXpZeUxXTmpPREF0TXpVeU1pMDJaRGMxTVRCbE9HTXlaV1FpTENKdUlqcHVkV3hzTENKaUlqcHVkV3hzTENKdElqcHVkV3hzTENKc0lqcHVkV3hzTENKemN5STZiblZzYkN3aWJuTWlPbTUxYkd3c0ltSnpJanB1ZFd4c0xDSnVkV3hzSWpwdWRXeHNMQ0ppYjI5c0lqcHVkV3hzZlgxOSJ9",
+      "text": "Mehr laden"
+    },
+    "strings": {
+      "deleteMovie": "Film aus dem Wiedergabeverlauf löschen",
+      "deleteSeason": "Folgen aus dem Wiedergabeverlauf löschen",
+      "episodesWatched": "Angesehene Folgen",
+      "genericError": "Es liegt ein Problem mit dieser Seite vor. Bitte aktualisiere die Seite oder melde dich ab und dann erneut an.",
+      "heading": "Wiedergabeverlauf",
+      "intro": "Hier kannst du alle bisher angesehenen Videos anzeigen und verwalten. Wenn du Videos aus deinem Wiedergabeverlauf löschst, ändert sich nur diese Liste. Das Video wird dir weiterhin angezeigt, wenn du Prime Video durchsuchst. Jedes Profil hat eine eigene Liste. Um Videos anzuzeigen und zu verwalten, die mit einem anderen Profil angesehen wurden, wechsle zu diesem Profil.",
+      "removedEpisodes": "{episodeCount} Folgen werden aus Ihrem Wiedergabeverlauf entfernt. Eventuell werden diese Folgen noch einige Tage lang hier angezeigt.",
+      "removedTitle": "{titleName} wird aus Ihrem Wiedergabeverlauf entfernt. Eventuell wird dieses Video noch einige Tage lang hier angezeigt."
+    },
+    "titles": [
+      {
+        "date": "7. November 2023",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.6073330a-f9cc-4de8-954d-d6d4c2ab8a6d",
+                  "tag": "REMOVE",
+                  "token": "gweAOwuJFfNXLfz0biXpBuoahXXEb5qky/U8xW6Ozgm5AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.6073330a-f9cc-4de8-954d-d6d4c2ab8a6d",
+                      "tag": "REMOVE",
+                      "token": "gweAOwuJFfNXLfz0biXpBuoahXXEb5qky/U8xW6Ozgm5AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.6073330a-f9cc-4de8-954d-d6d4c2ab8a6d",
+                "time": 1699388798705,
+                "title": {
+                  "href": "/gp/video/detail/0KV673IG5SD4NKX2JRGJLK39F1/ref=atv_set_wh_dp",
+                  "text": "Folge 1: ATOM EVE SPECIAL EPISODE"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.99f5ca48-0da4-429a-9646-ea25bd233055",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/697321cbb5326251d6b75e98a8757319d4dc409cc71c6c12022c5ba7593b8312._UX667_UY375_SY200_.png",
+            "time": 1699388798705,
+            "title": {
+              "href": "/gp/video/detail/0O9QQKFZNXT71V3Y7XX9EUQ1JP/ref=atv_set_wh_dp",
+              "text": "INVINCIBLE PRÄSENTIERT DIE ATOM EVE SPECIAL EPISODE"
+            }
+          }
+        ]
+      },
+      {
+        "date": "5. November 2023",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.c798602c-779f-4a52-85da-afe27973df07",
+                  "tag": "REMOVE",
+                  "token": "g+hBYpHH3yFq+RbX1CgtszubHjF/vJo2bmtoGmbLnGJ9AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.c798602c-779f-4a52-85da-afe27973df07",
+                      "tag": "REMOVE",
+                      "token": "g+hBYpHH3yFq+RbX1CgtszubHjF/vJo2bmtoGmbLnGJ9AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.c798602c-779f-4a52-85da-afe27973df07",
+                "time": 1699203038903,
+                "title": {
+                  "href": "/gp/video/detail/0QZ05H0GEMT5RK2WMMUPQSLTZB/ref=atv_set_wh_dp",
+                  "text": "Folge 1: Eine Lektion für dein nächstes Leben"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.5ec17cf1-2a26-4277-bcca-d7f7a18e3bea",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/9ae1eaf127a50a050d365936ac6aa820826745b1883ff54cc92bdfc0f8a16d56._UX667_UY375_SY200_.png",
+            "time": 1699203038903,
+            "title": {
+              "href": "/gp/video/detail/0KRK7IABRYDORGPDYP1XO3OT0Q/ref=atv_set_wh_dp",
+              "text": "INVINCIBLE – Staffel 2"
+            }
+          }
+        ]
+      },
+      {
+        "date": "11. Juni 2023",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.a72fb672-8fa4-4cfc-bd4b-7007511c5ad3",
+                  "tag": "REMOVE",
+                  "token": "g40a+XiMpw9Co/Hi7Y1U6kpw8oojwB/Q3QDZf+n04p8JAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.a72fb672-8fa4-4cfc-bd4b-7007511c5ad3",
+                      "tag": "REMOVE",
+                      "token": "g40a+XiMpw9Co/Hi7Y1U6kpw8oojwB/Q3QDZf+n04p8JAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.a72fb672-8fa4-4cfc-bd4b-7007511c5ad3",
+                "time": 1686519503182,
+                "title": {
+                  "href": "/gp/video/detail/0P1XJGFUC55AX50JW1S5JQHL1V/ref=atv_set_wh_dp",
+                  "text": "Folge 1: The Grand Tour: A Scandi Flick"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.9ff746c4-226d-499b-8aa5-190dd02891a4",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/edc194ba2d776c349854f6024fd49f9fedca12521a0abc68a77382cb9da1cedc._UX667_UY375_SY200_.jpg",
+            "time": 1686519503182,
+            "title": {
+              "href": "/gp/video/detail/0OMJJHQSXAM3COTIBTQDKZ4TK4/ref=atv_set_wh_dp",
+              "text": "The Grand Tour – Staffel 5"
+            }
+          }
+        ]
+      },
+      {
+        "date": "9. Januar 2022",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.5ff3fc5d-5644-4afb-b292-201c6d1bce28_amzn1.dv.gti.b8eecbc4-a256-4044-9cb5-20d72d8ca994_amzn1.dv.gti.f4e4bbb4-0060-436c-afff-2fe8dac36156_amzn1.dv.gti.fd94e037-6fc4-44c2-81bb-b468f4802002_amzn1.dv.gti.8ec5f64a-1547-410d-9556-355a95b7be13_amzn1.dv.gti.8596b554-a74d-4147-bf39-0de22d1533ec_amzn1.dv.gti.8408ae5f-18ed-4958-a305-10e2932475b5_amzn1.dv.gti.4685ff59-e3c5-4c80-aaaa-62bf4ceda9c5_amzn1.dv.gti.2c2bf0f4-a10a-4562-b928-4a7dbe018b9c_amzn1.dv.gti.346ce6c6-1089-43cc-915e-c123c3cfea0f",
+                  "tag": "REMOVE",
+                  "token": "g0wV8TB3LXgXkUCePO9DdkEllBlqqlG3cYpfiRx6U9NoAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.5ff3fc5d-5644-4afb-b292-201c6d1bce28",
+                      "tag": "REMOVE",
+                      "token": "g0wV8TB3LXgXkUCePO9DdkEllBlqqlG3cYpfiRx6U9NoAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.5ff3fc5d-5644-4afb-b292-201c6d1bce28",
+                "time": 1641775078297,
+                "title": {
+                  "href": "/gp/video/detail/0KU42IB6C1JATGP6OB9QOFZACO/ref=atv_set_wh_dp",
+                  "text": "Folge 10: Tag der offenen Tür"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.b8eecbc4-a256-4044-9cb5-20d72d8ca994",
+                      "tag": "REMOVE",
+                      "token": "g4jnA2UJcCmPbGDTc1JyO9S+bGl+/Wt7x+yZlpBYMHaoAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.b8eecbc4-a256-4044-9cb5-20d72d8ca994",
+                "time": 1641773915916,
+                "title": {
+                  "href": "/gp/video/detail/0Q3R5P0CYLZERKEV0U5CRSUK5W/ref=atv_set_wh_dp",
+                  "text": "Folge 9: 20 Jahre Thorstens Markt"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.f4e4bbb4-0060-436c-afff-2fe8dac36156",
+                      "tag": "REMOVE",
+                      "token": "g2BxrQ5lYd3GZG6TCnfrbVqc6YF00njG8Jspy2CWQXI0AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.f4e4bbb4-0060-436c-afff-2fe8dac36156",
+                "time": 1641772724048,
+                "title": {
+                  "href": "/gp/video/detail/0TNJQ0ARA5JKWW0SEF6PW0DSGM/ref=atv_set_wh_dp",
+                  "text": "Folge 8: Tobias bei den Wölfen"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.fd94e037-6fc4-44c2-81bb-b468f4802002",
+                      "tag": "REMOVE",
+                      "token": "gwFANTNZP8bubkJWMTk/Fi5BZKgrnQtdfPFpxG4RnvabAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.fd94e037-6fc4-44c2-81bb-b468f4802002",
+                "time": 1641771670984,
+                "title": {
+                  "href": "/gp/video/detail/0U62BPIVHPFR137N3QSVCZWZR6/ref=atv_set_wh_dp",
+                  "text": "Folge 7: Peter ist schwanger"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.8ec5f64a-1547-410d-9556-355a95b7be13",
+                      "tag": "REMOVE",
+                      "token": "g1GYkA5XQaY9j0YsRtVI2bYaLlvLCZBZcieV/YUm+em8AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.8ec5f64a-1547-410d-9556-355a95b7be13",
+                "time": 1641770492076,
+                "title": {
+                  "href": "/gp/video/detail/0NLWEW294E53WJEFA4EU3YZ7DF/ref=atv_set_wh_dp",
+                  "text": "Folge 6: Gammelfleisch"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.8596b554-a74d-4147-bf39-0de22d1533ec",
+                      "tag": "REMOVE",
+                      "token": "g9aMUkTWOAR2rT3KREeSCdlGUiR2hTnfMPFGySP5m/lIAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.8596b554-a74d-4147-bf39-0de22d1533ec",
+                "time": 1641769456599,
+                "title": {
+                  "href": "/gp/video/detail/0N2BPPFRY205JIDN0KLZF90P2K/ref=atv_set_wh_dp",
+                  "text": "Folge 5: Kolinski Eimsbüttel"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.8408ae5f-18ed-4958-a305-10e2932475b5",
+                      "tag": "REMOVE",
+                      "token": "g8L6aBi6hjmkTFHSVy8K4F6HOtd4dtrYOHC2hodXkIjyAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.8408ae5f-18ed-4958-a305-10e2932475b5",
+                "time": 1641768228680,
+                "title": {
+                  "href": "/gp/video/detail/0MZ0F4WGGX8WT3UZQ6BMSXVT11/ref=atv_set_wh_dp",
+                  "text": "Folge 4: Sk8er 4 Life"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.4685ff59-e3c5-4c80-aaaa-62bf4ceda9c5",
+                      "tag": "REMOVE",
+                      "token": "g1f8MLo043Gy+kIYA0V570pgPAibHlBbx2n5sDUM32+tAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.4685ff59-e3c5-4c80-aaaa-62bf4ceda9c5",
+                "time": 1641767314154,
+                "title": {
+                  "href": "/gp/video/detail/0JBWY2K1UR3SF9T09R8YH9NV0L/ref=atv_set_wh_dp",
+                  "text": "Folge 3: Blautag"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.2c2bf0f4-a10a-4562-b928-4a7dbe018b9c",
+                      "tag": "REMOVE",
+                      "token": "g0DpqL1WHR++pRnXhLVaBQA+k7ntuclrAo0jPhPExyzNAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.2c2bf0f4-a10a-4562-b928-4a7dbe018b9c",
+                "time": 1641766315108,
+                "title": {
+                  "href": "/gp/video/detail/0HRR2JN0BX0O5MXXBXNYVGYRH8/ref=atv_set_wh_dp",
+                  "text": "Folge 2: Große Frauen und kleine Schwänze"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.346ce6c6-1089-43cc-915e-c123c3cfea0f",
+                      "tag": "REMOVE",
+                      "token": "g1YoYkJMxBgkFa+M8nW0PFDnlMRCcvyDnwxh0HE/74rlAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.346ce6c6-1089-43cc-915e-c123c3cfea0f",
+                "time": 1641765080649,
+                "title": {
+                  "href": "/gp/video/detail/0I9CCMLWFD5TPVC6U5FNBL4VM7/ref=atv_set_wh_dp",
+                  "text": "Folge 1: Der Anfang vom Ende"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.7153d866-01a8-4610-a70f-f333be7cf76f",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/5f8d219f925e6e7b95addac48c6314edf834ee10bb53f9f7e485cf9f88160d00._UX667_UY375_SY200_.jpg",
+            "time": 1641775078297,
+            "title": {
+              "href": "/gp/video/detail/0LV55BDXNNNCY90FG1OMZQGLM7/ref=atv_set_wh_dp",
+              "text": "Die Discounter - Staffel 1"
+            }
+          }
+        ]
+      },
+      {
+        "date": "25. Dezember 2021",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.e3132b8f-9f74-420f-bdfa-3a3f2aea7084",
+                  "tag": "REMOVE",
+                  "token": "g943CLdFV7psyyKzdZvjfOHgwZNkhD0Q6NaNHpEPfMBsAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.e3132b8f-9f74-420f-bdfa-3a3f2aea7084",
+                      "tag": "REMOVE",
+                      "token": "g943CLdFV7psyyKzdZvjfOHgwZNkhD0Q6NaNHpEPfMBsAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.e3132b8f-9f74-420f-bdfa-3a3f2aea7084",
+                "time": 1640452284745,
+                "title": {
+                  "href": "/gp/video/detail/0SLKKDOO28ZSCSVEZR0QBEMF7O/ref=atv_set_wh_dp",
+                  "text": "Folge 4: Was ist los mit den Franzosen?"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.44b75445-c9f8-df00-d4a0-67734f473ab9",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/1e887f67089edd8a673ff2c00962a7065585fa6f67d9ce4f7b8782c3d31b8995._UX667_UY375_SY200_.jpg",
+            "time": 1640452284745,
+            "title": {
+              "href": "/gp/video/detail/0J82A1O4IWN8EXPFXBNT8W3E7T/ref=atv_set_wh_dp",
+              "text": "The Grand Tour presents…"
+            }
+          }
+        ]
+      },
+      {
+        "date": "8. August 2021",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.aa29a706-897d-4464-95f1-ca8cd103ecc1",
+                  "tag": "REMOVE",
+                  "token": "gwJREprr6IiW8HHr02tdtKHv/X4CYSqbaEiWi0wOo/6OAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.aa29a706-897d-4464-95f1-ca8cd103ecc1",
+                      "tag": "REMOVE",
+                      "token": "gwJREprr6IiW8HHr02tdtKHv/X4CYSqbaEiWi0wOo/6OAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.aa29a706-897d-4464-95f1-ca8cd103ecc1",
+                "time": 1628462854327,
+                "title": {
+                  "href": "/gp/video/detail/0P89WIH37DYOC1D719LJHM6OQP/ref=atv_set_wh_dp",
+                  "text": "Folge 3: Lochdown"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.44b75445-c9f8-df00-d4a0-67734f473ab9",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/1e887f67089edd8a673ff2c00962a7065585fa6f67d9ce4f7b8782c3d31b8995._UX667_UY375_SY200_.jpg",
+            "time": 1628462854327,
+            "title": {
+              "href": "/gp/video/detail/0J82A1O4IWN8EXPFXBNT8W3E7T/ref=atv_set_wh_dp",
+              "text": "The Grand Tour presents…"
+            }
+          }
+        ]
+      },
+      {
+        "date": "5. Juli 2021",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.9cb3856a-0f64-4e4f-b75b-bfc01be5912c_amzn1.dv.gti.1f16e97e-8cfb-4237-9b76-b847d13eb3b1_amzn1.dv.gti.a28af04e-a4b1-489f-942a-459da9315757_amzn1.dv.gti.964a9269-6d1b-456b-bb56-5113e385afaa_amzn1.dv.gti.510aafd8-1633-4f1a-8969-9f271919d08c_amzn1.dv.gti.6410257f-d6db-41e4-adb7-cfe4036b832e",
+                  "tag": "REMOVE",
+                  "token": "g9lDV1FNF5b7l8KYwgc5E9SyFLZEWuP/pTurWVkahDx5AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.9cb3856a-0f64-4e4f-b75b-bfc01be5912c",
+                      "tag": "REMOVE",
+                      "token": "g9lDV1FNF5b7l8KYwgc5E9SyFLZEWuP/pTurWVkahDx5AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.9cb3856a-0f64-4e4f-b75b-bfc01be5912c",
+                "time": 1625520572152,
+                "title": {
+                  "href": "/gp/video/detail/0OFL1ZRFLA1EPJZZ1CW3QKFNL8/ref=atv_set_wh_dp",
+                  "text": "Folge 8: Ernte"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.1f16e97e-8cfb-4237-9b76-b847d13eb3b1",
+                      "tag": "REMOVE",
+                      "token": "g0UegIhKgLT8S022oW1vIaM7OEU2IhIblCL95ONRmyfGAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.1f16e97e-8cfb-4237-9b76-b847d13eb3b1",
+                "time": 1625517267992,
+                "title": {
+                  "href": "/gp/video/detail/0GZVBQ13CKO9I1WTDWJRNJDGHD/ref=atv_set_wh_dp",
+                  "text": "Folge 7: Vermasselt"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.a28af04e-a4b1-489f-942a-459da9315757",
+                      "tag": "REMOVE",
+                      "token": "gyPGXi72SidCP1PalF+PSl+jVxfVPoBS+8vd/oo4IEmeAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.a28af04e-a4b1-489f-942a-459da9315757",
+                "time": 1625514850239,
+                "title": {
+                  "href": "/gp/video/detail/0OS190FLDI5ZRG1CMKVR7R91LJ/ref=atv_set_wh_dp",
+                  "text": "Folge 6: Affenhitze"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.964a9269-6d1b-456b-bb56-5113e385afaa",
+                      "tag": "REMOVE",
+                      "token": "g9sCYq04w/TlmBlyX3TFCCditSkC1JZrgh51cInsETA8AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.964a9269-6d1b-456b-bb56-5113e385afaa",
+                "time": 1625512019558,
+                "title": {
+                  "href": "/gp/video/detail/0O1X8QN9LDG2RNURIM8QZH8CRU/ref=atv_set_wh_dp",
+                  "text": "Folge 5: Pan(ik)demie"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.510aafd8-1633-4f1a-8969-9f271919d08c",
+                      "tag": "REMOVE",
+                      "token": "gxJj4OH17jpsLTTfJClZAw7LIBCiHhvwxTGZaipfJBygAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.510aafd8-1633-4f1a-8969-9f271919d08c",
+                "time": 1625498701338,
+                "title": {
+                  "href": "/gp/video/detail/0JYBZ81MY6W0P75ICLP3GUY2RW/ref=atv_set_wh_dp",
+                  "text": "Folge 4: Das Renaturierungsprojekt"
+                }
+              },
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.6410257f-d6db-41e4-adb7-cfe4036b832e",
+                      "tag": "REMOVE",
+                      "token": "g29nnbBLVd5mmc1YPMXk6/f0eXFGD0yiBPv+1n7qRHPkAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.6410257f-d6db-41e4-adb7-cfe4036b832e",
+                "time": 1625495422403,
+                "title": {
+                  "href": "/gp/video/detail/0L2VEY0EH1IDENXRWXLSWBFL0U/ref=atv_set_wh_dp",
+                  "text": "Folge 3: Der Hofladen"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.e1255a8e-97c3-421d-b4ef-189178a4fc3b",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/ff3baae249aceb99fde444582ca003dfd4c6d5fadccc68ee4f51b457013d3f25._UX667_UY375_SY200_.jpg",
+            "time": 1625520572152,
+            "title": {
+              "href": "/gp/video/detail/0SHGKA0J8D4G01ZGD647627NEJ/ref=atv_set_wh_dp",
+              "text": "Clarkson&#39;s Farm - Staffel 1"
+            }
+          }
+        ]
+      },
+      {
+        "date": "4. Juli 2021",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.86860e0a-1e79-42e2-863a-444edbff38f8",
+                  "tag": "REMOVE",
+                  "token": "gzmATMPKIqjoAt60BB5y1a83y9Vkf+JK6fGi3vGdrXUlAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.86860e0a-1e79-42e2-863a-444edbff38f8",
+                      "tag": "REMOVE",
+                      "token": "gzmATMPKIqjoAt60BB5y1a83y9Vkf+JK6fGi3vGdrXUlAAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.86860e0a-1e79-42e2-863a-444edbff38f8",
+                "time": 1625444486893,
+                "title": {
+                  "href": "/gp/video/detail/0N4BG63VACDTYR3WLQYC83UUIG/ref=atv_set_wh_dp",
+                  "text": "Folge 2: Schäferei"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.e1255a8e-97c3-421d-b4ef-189178a4fc3b",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/ff3baae249aceb99fde444582ca003dfd4c6d5fadccc68ee4f51b457013d3f25._UX667_UY375_SY200_.jpg",
+            "time": 1625444486893,
+            "title": {
+              "href": "/gp/video/detail/0SHGKA0J8D4G01ZGD647627NEJ/ref=atv_set_wh_dp",
+              "text": "Clarkson&#39;s Farm - Staffel 1"
+            }
+          }
+        ]
+      },
+      {
+        "date": "21. Januar 2021",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.b4babdc8-d5f7-bf07-85b5-bf7ba4f8ac44",
+                  "tag": "REMOVE",
+                  "token": "g9+UqSu3TA/XTV3DJ6qZyrNN9En7Yk6QEdRExQMSTcW2AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.b4babdc8-d5f7-bf07-85b5-bf7ba4f8ac44",
+                      "tag": "REMOVE",
+                      "token": "g9+UqSu3TA/XTV3DJ6qZyrNN9En7Yk6QEdRExQMSTcW2AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.b4babdc8-d5f7-bf07-85b5-bf7ba4f8ac44",
+                "time": 1611252782960,
+                "title": {
+                  "href": "/gp/video/detail/0PUSNG97DLCDSN2N85U0JB5QH0/ref=atv_set_wh_dp",
+                  "text": "Folge 1: Asia-Fusion"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.e2babdc8-ccb5-7e03-760b-e5cc9cc38ea9",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/9e7b2cc1a3190b5a42acd5b24442ac0c7c32cab48bad24ab373dbb2626c77afe._UX667_UY375_SY200_.jpg",
+            "time": 1611252782960,
+            "title": {
+              "href": "/gp/video/detail/0SKU29JEEOUWR6LW44DO6V3GRT/ref=atv_set_wh_dp",
+              "text": "James May: Oh Cook! - Staffel 1"
+            }
+          }
+        ]
+      },
+      {
+        "date": "20. Dezember 2020",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.feba7620-5120-322f-4512-9d635983c0f3",
+                  "tag": "REMOVE",
+                  "token": "g6bICYU10g6EucI540ouFZUhr5V7nlPquR/sMKr72QD0AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [],
+            "gti": "amzn1.dv.gti.feba7620-5120-322f-4512-9d635983c0f3",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/5b83a7a0d933d5fc69942a36895ffaefd91d601f999f5855353422b2736e4918._UX667_UY375_SY200_.jpg",
+            "time": 1608499207759,
+            "title": {
+              "href": "/gp/video/detail/0U8IBE45LTNO63PAZ9B9ZA81RN/ref=atv_set_wh_dp",
+              "text": "Sound of Metal"
+            }
+          }
+        ]
+      },
+      {
+        "date": "18. Dezember 2020",
+        "titles": [
+          {
+            "actions": {
+              "REMOVE": {
+                "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                "query": {
+                  "titleIds": "amzn1.dv.gti.b0b99ddc-a362-cc80-3522-6d7510e8c2ed",
+                  "tag": "REMOVE",
+                  "token": "g1zEPbP3YZqW+cMBZMwL6FLs7pnFAf4UFXNJ/19KMOC+AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                }
+              }
+            },
+            "children": [
+              {
+                "actions": {
+                  "REMOVE": {
+                    "partialURL": "/gp/video/api/activityHistoryTitleUpdate/ref=atv_set_wh_rmv",
+                    "query": {
+                      "titleIds": "amzn1.dv.gti.b0b99ddc-a362-cc80-3522-6d7510e8c2ed",
+                      "tag": "REMOVE",
+                      "token": "g1zEPbP3YZqW+cMBZMwL6FLs7pnFAf4UFXNJ/19KMOC+AAAAAQAAAABlU+L2cmF3AAAAAPgWC9WfHH8iB+olH/E9xQ=="
+                    }
+                  }
+                },
+                "children": [],
+                "gti": "amzn1.dv.gti.b0b99ddc-a362-cc80-3522-6d7510e8c2ed",
+                "time": 1608332161095,
+                "title": {
+                  "href": "/gp/video/detail/0PM9EQ2AFH3HUQ0Q4AK3X6GDM5/ref=atv_set_wh_dp",
+                  "text": "Folge 0: Utopia Staffel 1 - Offizieller Trailer"
+                }
+              }
+            ],
+            "gti": "amzn1.dv.gti.76b99ddc-8cd7-1735-9070-69c738a96d7c",
+            "imageSrc": "https://m.media-amazon.com/images/S/pv-target-images/2aa7db263bb0f1220440f44d1b2efdff4080443890e3f5929e8e0d29a82a4782._UX667_UY375_SY200_.jpg",
+            "time": 1608332161095,
+            "title": {
+              "href": "/gp/video/detail/0M6NA4SJBK8DQXR9M94PTX6D8C/ref=atv_set_wh_dp",
+              "text": "Utopia - Staffel 1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
