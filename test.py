@@ -97,21 +97,27 @@ soup = BeautifulSoup(html_code, 'html.parser')
 
 def extract_ser_sn(name):
     # Definiere das Muster für den Serientitel und die Staffelnummer
-    muster = re.compile(r'^(.+) - Staffel (\d+)$')
+    muster = [re.compile(r'(.+) – Staffel (\d+)'), re.compile(r'(.+) - Staffel (\d+)')]
 
-    # Suche nach Übereinstimmungen im Namen
-    ergebnis = muster.match(name)
+    for mus in muster:
+        # Suche nach Übereinstimmungen im Namen
+        ergebnis = mus.match(name)
+        if ergebnis:
+            break
 
+    serientitel, staffelnummer = None, None
     if ergebnis:
         serientitel = ergebnis.group(1)
         staffelnummer = ergebnis.group(2)
-        print(f"Seriennamen: {serientitel}")
-        print(f"Staffelnummer: {staffelnummer}")
-        return serientitel, staffelnummer
+        # print(f"Seriennamen: {serientitel}")
+        # print(f"Staffelnummer: {staffelnummer}")
+    elif "special" in name.lower():
+        serientitel = name
+        staffelnummer = "Special"
     else:
-        print("Keine Übereinstimmung gefunden.")
-        return None, None
+        print(f"Kein Seriennamen gefunden: {name}")
 
+    return serientitel, staffelnummer
 
 def extract_epsn_en(name):
     # Definiere das Muster für die Folgennummer und den Folgentitel
@@ -120,17 +126,18 @@ def extract_epsn_en(name):
     # Suche nach Übereinstimmungen im Folgennamen
     ergebnis = muster.match(name)
 
+    folgennummer, folgentitel = None, None
     if ergebnis:
         folgennummer = ergebnis.group(1).zfill(2)  # Fülle mit Nullen auf, um sicherzustellen, dass die Nummer zwei Stellen hat
         folgentitel = ergebnis.group(2)
-        print(f"Folgennummer: {folgennummer}")
-        print(f"Folgentitel: {folgentitel}")
-        return folgennummer, folgentitel
+        # print(f"Folgennummer: {folgennummer}")
+        # print(f"Folgentitel: {folgentitel}")
     else:
-        print("Keine Übereinstimmung gefunden.")
-        return None, None
+        print(f"Keine Nummer gefunden: {name}")
 
-Serien = []
+    return folgennummer, folgentitel
+
+Serien = {}
 for script_tag in soup.find_all('script', {'type': 'text/template'}):
     if '{"props":{"metadata":{"availability"' in script_tag.text:
         # Verarbeiten Sie diesen Tag weiter
@@ -154,11 +161,21 @@ for script_tag in soup.find_all('script', {'type': 'text/template'}):
                             serie, staffel = extract_ser_sn(serientitle)
                             folgennummer, folgentitel_n = extract_epsn_en(folgentitel)
                             
-                            for ser in Serien:
-                                if not serie in ser.name:
-                                    Serien.append(Serie(serie))
-                                    # print(serie)
+                            # ser_namen = [ x.name for x in Serien]
 
+                            # if not serie in ser_namen:
+                            #     Serien.append(Serie(serie))
+                            #     # print(serie)
+                            if serie:
+                                if not serie in Serien:
+                                    Serien[serie] = Serie(serie)
+
+                                Serien[serie].add_staffel(staffel)
+                                Serien[serie].staffeln[staffel].add_episode(nummer=folgennummer, titel=folgentitel_n, datum=date)
+
+print(Serien)
+# for _serie in Serien:
+#    print(_serie.name)
                             # print(f"Serie: {serie}")
                             # print(f"Staffel: {staffel}")
                             # print(f"Folgennummer: {folgennummer}")

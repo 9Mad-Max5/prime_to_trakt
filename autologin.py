@@ -12,9 +12,9 @@ from bs4 import BeautifulSoup
 from getpass import getpass
 
 from credentials import *
+from time import sleep
+import time
 
-# username = input("Enter in your username: ")
-# password = getpass("Enter in your password: ")
 page = "https://www.amazon.com/gp/video/settings/watch-history"
 
 # Pfad zum aktuellen Skript
@@ -71,19 +71,30 @@ def crawl_amazon(page, username, password, otp=None):
     )
     auth_button.click()
 
-    # # Warte, bis das div-Element mit dem Attribut 'data-automation-id="watch-history"' vorhanden ist
-    # watch_history_div = WebDriverWait(driver, sel_timeout).until(
-    #     EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-automation-id="watch-history"]'))
-    # )
+    # Warte, bis das div-Element mit dem Attribut 'data-automation-id="watch-history"' vorhanden ist
+    watch_history_div = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-automation-id="watch-history"]'))
+    )
 
-    # # Warte bis mindestens eine Checkbox gefunden wird
-    # checkboxes = WebDriverWait(watch_history_div, sel_timeout).until(
-    #     EC.presence_of_all_elements_located((By.XPATH, './/input[@type="checkbox"]'))
-    # )
+   # Scrollen für 10 Sekunden
+    scroll_duration = 10  # in Sekunden
 
-    # # Klicke jede Checkbox an
-    # for checkbox in checkboxes:
-    #     checkbox.click()
+    # Startzeitpunkt
+    start_time = time.time()
+
+    while time.time() - start_time < scroll_duration:
+        # Führe JavaScript-Code aus, um um eine bestimmte Entfernung zu scrollen
+        driver.execute_script('window.scrollBy(0, 500);')  # Hier 500 ist die Vertikale Scroll-Entfernung
+        time.sleep(0.5)  # Wartezeit in Sekunden zwischen den Scroll-Schritten
+
+    # Warte bis mindestens eine Checkbox gefunden wird
+    checkboxes = WebDriverWait(watch_history_div, sel_timeout).until(
+        EC.presence_of_all_elements_located((By.XPATH, './/input[@type="checkbox"]'))
+    )
+
+    # Klicke jede Checkbox an
+    for checkbox in checkboxes:
+        checkbox.click()
 
 
     # Greife auf den HTML-Quellcode der Seite zu
@@ -103,34 +114,34 @@ def crawl_amazon(page, username, password, otp=None):
 
     return soup
 
-# Funktion aufrufen
-soup = crawl_amazon(page=page, username=username, password=password, otp=otp)
+# # Funktion aufrufen
+# soup = crawl_amazon(page=page, username=username, password=password, otp=otp)
 
-# Checkboxen innerhalb des gewünschten div-Elements finden
-# watch_history_div = soup.find('div', {'data-automation-id': 'watch-history'})
-# checkboxes = watch_history_div.find_all('input', {'type': 'checkbox'})
+# # Checkboxen innerhalb des gewünschten div-Elements finden
+# # watch_history_div = soup.find('div', {'data-automation-id': 'watch-history'})
+# # checkboxes = watch_history_div.find_all('input', {'type': 'checkbox'})
 
-# Extrahiere Informationen
-history_items = soup.find('div', {'data-automation-id': 'activity-history-items'})
-items = history_items.find_all('li')
-# print(items)
-with open("output1.html", "w") as file:
-    file.write(str(items))
+# # Extrahiere Informationen
+# history_items = soup.find('div', {'data-automation-id': 'activity-history-items'})
+# items = history_items.find_all('li')
+# # print(items)
+# with open("output1.html", "w") as file:
+#     file.write(str(items))
     
-print(type(items))
+# print(type(items))
 
-for item in items:
-    # Extrahiere Datum, Serie, Staffel, Folgennummer und Folgentitel
-    date = item.find('div', {'data-automation-id': 'wh-date-5. November 2023'}).div.text.strip()
-    serie = item.find('a', {'class': '_1NNx6V Nwyhwn'}).text.strip()
-    staffel = serie.split('–')[-1].strip()
-    folgennummer = item.find('p').text.split(':')[0].strip()
-    folgentitel = item.find('p').text.split(':')[1].strip()
+# for item in items:
+#     # Extrahiere Datum, Serie, Staffel, Folgennummer und Folgentitel
+#     date = item.find('div', {'data-automation-id': 'wh-date-5. November 2023'}).div.text.strip()
+#     serie = item.find('a', {'class': '_1NNx6V Nwyhwn'}).text.strip()
+#     staffel = serie.split('–')[-1].strip()
+#     folgennummer = item.find('p').text.split(':')[0].strip()
+#     folgentitel = item.find('p').text.split(':')[1].strip()
 
-    # Ausgabe der extrahierten Daten
-    print("Datum:", date)
-    print("Serie:", serie)
-    print("Staffel:", staffel)
-    print("Folgennummer:", folgennummer)
-    print("Folgentitel:", folgentitel)
-    # print(soup)
+#     # Ausgabe der extrahierten Daten
+#     print("Datum:", date)
+#     print("Serie:", serie)
+#     print("Staffel:", staffel)
+#     print("Folgennummer:", folgennummer)
+#     print("Folgentitel:", folgentitel)
+#     # print(soup)
