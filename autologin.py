@@ -114,34 +114,3 @@ def crawl_amazon(page, username, password, otp=None):
 
     return soup
 
-# # Funktion aufrufen
-# soup = crawl_amazon(page=page, username=username, password=password, otp=otp)
-
-# # Checkboxen innerhalb des gewünschten div-Elements finden
-# # watch_history_div = soup.find('div', {'data-automation-id': 'watch-history'})
-# # checkboxes = watch_history_div.find_all('input', {'type': 'checkbox'})
-
-# # Extrahiere Informationen
-# history_items = soup.find('div', {'data-automation-id': 'activity-history-items'})
-# items = history_items.find_all('li')
-# # print(items)
-# with open("output1.html", "w") as file:
-#     file.write(str(items))
-    
-# print(type(items))
-
-# for item in items:
-#     # Extrahiere Datum, Serie, Staffel, Folgennummer und Folgentitel
-#     date = item.find('div', {'data-automation-id': 'wh-date-5. November 2023'}).div.text.strip()
-#     serie = item.find('a', {'class': '_1NNx6V Nwyhwn'}).text.strip()
-#     staffel = serie.split('–')[-1].strip()
-#     folgennummer = item.find('p').text.split(':')[0].strip()
-#     folgentitel = item.find('p').text.split(':')[1].strip()
-
-#     # Ausgabe der extrahierten Daten
-#     print("Datum:", date)
-#     print("Serie:", serie)
-#     print("Staffel:", staffel)
-#     print("Folgennummer:", folgennummer)
-#     print("Folgentitel:", folgentitel)
-#     # print(soup)
