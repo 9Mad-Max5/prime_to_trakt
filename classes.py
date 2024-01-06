@@ -7,22 +7,22 @@ class Episode:
 class Staffel:
     def __init__(self, name):
         self.name = name
-        self.episoden = []
+        self.episoden = {}
 
-    def add_episode(self, episode):
+    def add_episode(self, nummer, titel, datum):
         # Überprüfen, ob die Episode bereits existiert
-        if episode not in self.episoden:
-            self.episoden.append(episode)
+        if nummer not in self.episoden:
+            self.episoden[nummer] = Episode(nummer, titel, datum)
 
 class Serie:
     def __init__(self, name):
         self.name = name
-        self.staffeln = []
+        self.staffeln = {}
 
     def add_staffel(self, staffel):
         # Überprüfen, ob die Staffel bereits existiert
         if staffel not in self.staffeln:
-            self.staffeln.append(staffel)
+            self.staffeln[staffel] = Staffel(staffel)
 
 class Film:
     def __init__(self, name, datum):
