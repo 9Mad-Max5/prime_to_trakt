@@ -105,11 +105,11 @@ def extract_ser_sn(name):
     if ergebnis:
         serientitel = ergebnis.group(1)
         staffelnummer = ergebnis.group(2)
-        print(f"Seriennamen: {serientitel}")
-        print(f"Staffelnummer: {staffelnummer}")
+        # print(f"Seriennamen: {serientitel}")
+        # print(f"Staffelnummer: {staffelnummer}")
         return serientitel, staffelnummer
     else:
-        print("Keine Übereinstimmung gefunden.")
+        # print("Keine Übereinstimmung gefunden.")
         return None, None
 
 
@@ -123,11 +123,11 @@ def extract_epsn_en(name):
     if ergebnis:
         folgennummer = ergebnis.group(1).zfill(2)  # Fülle mit Nullen auf, um sicherzustellen, dass die Nummer zwei Stellen hat
         folgentitel = ergebnis.group(2)
-        print(f"Folgennummer: {folgennummer}")
-        print(f"Folgentitel: {folgentitel}")
+        # print(f"Folgennummer: {folgennummer}")
+        # print(f"Folgentitel: {folgentitel}")
         return folgennummer, folgentitel
     else:
-        print("Keine Übereinstimmung gefunden.")
+        # print("Keine Übereinstimmung gefunden.")
         return None, None
 
 Serien = []
@@ -150,14 +150,14 @@ for script_tag in soup.find_all('script', {'type': 'text/template'}):
                         for types in ele["children"]:
                             folgentitel = types["title"]["text"]
                             # print(types["title"]["text"])
-                            print(f"Datum: {date}")
+                            # print(f"Datum: {date}")
                             serie, staffel = extract_ser_sn(serientitle)
                             folgennummer, folgentitel_n = extract_epsn_en(folgentitel)
-                            
+                            print(Serien)
                             for ser in Serien:
                                 if not serie in ser.name:
                                     Serien.append(Serie(serie))
-                                    # print(serie)
+                                # print(ser.name)
 
                             # print(f"Serie: {serie}")
                             # print(f"Staffel: {staffel}")
