@@ -58,11 +58,11 @@ def search_show(show):
 
 def mark_episode(show, season, episode):
     for c_s in show.seasons:
-        if c_s.season == season_number:
+        if c_s.season == season:
             season = c_s
 
     for ep in season.episodes:
-        if ep.number == episode_number:
+        if ep.number == episode:
             episode = ep
 
     watched = get_history(episode)
@@ -70,14 +70,24 @@ def mark_episode(show, season, episode):
         episode.mark_as_seen()
         print(f"Marked as seen: {episode}")
 
+def import_dict(dictionary):
+    '''
+    Connection point to prime to trakt.
+    Retrieves the collected data dictonary and calls the needed Funktions.
+    '''
+    trakt_auth_handler(tr_username)
 
-# Beispielinformationen für die Geschichte
-show_title = 'INVINCIBLE'
-season_number = 2
-episode_number = 2
-watched_date = datetime.datetime.now()
+    for show in dictionary:
+        print(dictionary[show])
 
-trakt_auth_handler(tr_username)
-c_show = search_show(show_title)
-mark_episode(c_show, season_number, episode_number)
+
+    # c_show = search_show(show_title)
+    # mark_episode(c_show, season_number, episode_number)
+# # Beispielinformationen für die Geschichte
+# show_title = 'INVINCIBLE'
+# season_number = 2
+# episode_number = 2
+# watched_date = datetime.datetime.now()
+
+
 # print(f'Successfully added {show_title} Season {season_number} Episode {episode_number} to your Trakt history.')

@@ -2,7 +2,7 @@ import re
 
 def extract_ser_sn(name):
     # Definiere das Muster für den Serientitel und die Staffelnummer
-    muster = [re.compile(r'(.+) – Staffel (\d+)'), re.compile(r'(.+) - Staffel (\d+)')]
+    muster = [re.compile(r'(.+) – Staffel (\d+)'), re.compile(r'(.+) - Staffel (\d+)'), re.compile(r'(.+) - Season (\d+)'), re.compile(r'(.+) Staffel (\d+)')]
 
     for mus in muster:
         # Suche nach Übereinstimmungen im Namen
