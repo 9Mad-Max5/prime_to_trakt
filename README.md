@@ -1,8 +1,10 @@
-# prime_watch_history
-Load/Scrape the watch history from amazon prime.
+# prime to trakt
+Load/Scrape the watch history from amazon prime and post it to trakt.tv.
 
 ## Status
-So far the scraping itself is working but the collection of the data or more strucutre it needs some time.
+Collecting and posting to trakt.tv is working.
+Not fully headless.
+Movies are not scrapet and postet till now.
 
 ## Goal
 Create a script or maybe in the future a container which automaticaly push the information to trakt.
