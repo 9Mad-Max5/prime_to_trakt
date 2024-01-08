@@ -18,7 +18,7 @@ def extract_ser_sn(name):
         # print(f"Staffelnummer: {staffelnummer}")
     elif "special" in name.lower():
         serientitel = name
-        staffelnummer = "Special"
+        staffelnummer = 0
     else:
         print(f"Kein Seriennamen gefunden: {name}")
 

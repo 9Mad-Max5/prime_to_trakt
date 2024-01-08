@@ -4,7 +4,7 @@ from service_functions import *
 from classes import *
 import locale
 
-def parse_infos(soup):
+def parse_tv(soup):
     # Setze das Locale auf Deutsch
     locale.setlocale(locale.LC_TIME, 'de_DE')
     
@@ -22,7 +22,6 @@ def parse_infos(soup):
 
     for item in items:
         # Datum extrahieren
-        # Extracting the date
         found_date = False
         folgennummer = None
         folgentitel = None
@@ -65,13 +64,11 @@ def parse_infos(soup):
                     # Setze die Uhrzeit auf 12:00 Uhr mittags
                     datum_mittags = datetime.combine(datum_obj.date(), time(12, 0))
 
-                    if not serie in Serien:
-                        Serien[serie] = Serie(serie)
+                    if serie:
+                        if not serie in Serien:
+                            Serien[serie] = Serie(serie)
 
-                    Serien[serie].add_staffel(staffel)
-                    Serien[serie].staffeln[staffel].add_episode(nummer=folgennummer, titel=folgentitel, datum=datum_mittags)
+                        Serien[serie].add_staffel(staffel)
+                        Serien[serie].staffeln[staffel].add_episode(nummer=folgennummer, titel=folgentitel, datum=datum_mittags)
 
-                    # print(
-                    #     f"Datum: {datum_mittags} | Serie: {serie} | Staffel: {staffel} | Folgennummer: {folgennummer} | Folgentitel: {folgentitel}"
-                    # )
     return Serien

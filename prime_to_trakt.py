@@ -7,12 +7,9 @@ from trakt_handler import *
 
 page = "https://www.amazon.com/gp/video/settings/watch-history"
 
-# # Pfad zum aktuellen Skript
 # script_path = os.path.abspath(sys.argv[0])
-# sel_timeout = 60
 
 
 soup = crawl_amazon(page=page, username=username, password=password, totp=totp)
-serien = parse_infos(soup=soup)
-
-print(serien)
+serien = parse_tv(soup=soup)
+import_dict(serien, tr_username, silent=False)

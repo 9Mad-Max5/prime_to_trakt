@@ -8,6 +8,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+
 from bs4 import BeautifulSoup
 
 
@@ -23,52 +25,34 @@ def crawl_amazon(page, username, password, totp=None):
     # driver = webdriver.Chrome("chromedriver.exe", options=chrome_options)
     # driver.get(page)
 
-    # SignIn_button = driver.find_element_by_xpath('//*[@id="nav-link-accountList"]/span')
-    # SignIn_button.click()
+    # driver = webdriver.Chrome()
+    chrome_options = Options()
+    # chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(options=chrome_options)
+
     if os.path.exists(cookie_filename):
         load_cookies(driver, cookie_filename)
         driver.get(page)
+        try:
+            _ = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-automation-id="watch-history"]'))
+            )
+        except:
+            try:
+                _ = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID, "ap_email"))
+                )
+                login_procedure(driver, username, password, sel_timeout, totp)
+            except:
+                login_procedure_pw(driver, password, sel_timeout, totp)
+
+
     else:
         driver.get(page)
-        username_textbox = WebDriverWait(driver, sel_timeout).until(
-            EC.presence_of_element_located((By.ID, "ap_email"))
-        )
-        username_textbox.send_keys(username)
+        login_procedure(driver, username, password, sel_timeout, totp)
 
-        Continue_button = WebDriverWait(driver, sel_timeout).until(
-            EC.presence_of_element_located((By.ID, "continue"))
-        )
-        Continue_button.click()
-
-        password_textbox = WebDriverWait(driver, sel_timeout).until(
-            EC.presence_of_element_located((By.ID, "ap_password"))
-        )
-        password_textbox.send_keys(password)
-
-        remember_checkbox = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located(
-                (By.XPATH, '//input[@type="checkbox" and @name="rememberMe"]')
-            )
-        )
-        remember_checkbox.click()
-
-        SignIn_button = WebDriverWait(driver, sel_timeout).until(
-            EC.presence_of_element_located((By.ID, "signInSubmit"))
-        )
-        SignIn_button.click()
-
-        if totp:
-            totp_textbox = WebDriverWait(driver, sel_timeout).until(
-                EC.presence_of_element_located((By.ID, "auth-mfa-otpcode"))
-            )
-            totp_textbox.send_keys(totp)
-
-            auth_button = WebDriverWait(driver, sel_timeout).until(
-                EC.presence_of_element_located((By.ID, "auth-signin-button"))
-            )
-            auth_button.click()
 
     # Warte, bis das div-Element mit dem Attribut 'data-automation-id="watch-history"' vorhanden ist
     watch_history_div = WebDriverWait(driver, sel_timeout).until(
@@ -101,12 +85,6 @@ def crawl_amazon(page, username, password, totp=None):
 
     # Verwende BeautifulSoup, um die Daten zu scrapen
     soup = BeautifulSoup(page_source, 'html.parser')
-
-    # Hier kannst du nun bs4 verwenden, um die Daten von der Seite zu extrahieren
-    # Beispiel: Finde alle Links auf der Seite
-    # links = soup.find_all('a')
-    # for link in links:
-    #     print(link.get('href'))
 
     save_cookies(driver, cookie_filename)
 
@@ -159,3 +137,85 @@ def load_cookies(driver, filename):
 
     print("Cookie file " + filename + " does not exist.")
     return 0
+
+def login_procedure(driver, username, password, sel_timeout, totp=None):
+    username_textbox = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.ID, "ap_email"))
+    )
+    username_textbox.send_keys(username)
+
+    Continue_button = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.ID, "continue"))
+    )
+    Continue_button.click()
+
+    password_textbox = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.ID, "ap_password"))
+    )
+    password_textbox.send_keys(password)
+
+    remember_checkbox = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(
+            (By.XPATH, '//input[@type="checkbox" and @name="rememberMe"]')
+        )
+    )
+    remember_checkbox.click()
+
+    SignIn_button = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.ID, "signInSubmit"))
+    )
+    SignIn_button.click()
+
+    if totp:
+        totp_textbox = WebDriverWait(driver, sel_timeout).until(
+            EC.presence_of_element_located((By.ID, "auth-mfa-otpcode"))
+        )
+        totp_textbox.send_keys(totp)
+
+        auth_button = WebDriverWait(driver, sel_timeout).until(
+            EC.presence_of_element_located((By.ID, "auth-signin-button"))
+        )
+        auth_button.click()
+
+def login_procedure_pw(driver, password, sel_timeout, totp=None):
+    password_textbox = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.ID, "ap_password"))
+    )
+    password_textbox.send_keys(password)
+
+    remember_checkbox = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located(
+            (By.XPATH, '//input[@type="checkbox" and @name="rememberMe"]')
+        )
+    )
+    remember_checkbox.click()
+
+    SignIn_button = WebDriverWait(driver, sel_timeout).until(
+        EC.presence_of_element_located((By.ID, "signInSubmit"))
+    )
+    SignIn_button.click()
+
+    # totp not active during just pw login
+    # if totp:
+    #     totp_textbox = WebDriverWait(driver, sel_timeout).until(
+    #         EC.presence_of_element_located((By.ID, "auth-mfa-otpcode"))
+    #     )
+    #     totp_textbox.send_keys(totp)
+
+    #     auth_button = WebDriverWait(driver, sel_timeout).until(
+    #         EC.presence_of_element_located((By.ID, "auth-signin-button"))
+    #     )
+    #     auth_button.click()
+
+def set_chrome_options() -> Options:
+    """Sets chrome options for Selenium.
+    Chrome options for headless browser is enabled.
+    """
+    chrome_options = Options()
+    # chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--no-sandbox")
+    # chrome_options.add_argument("--disable-dev-shm-usage")
+    # chrome_prefs = {}
+    # chrome_options.experimental_options["prefs"] = chrome_prefs
+    # chrome_prefs["profile.default_content_settings"] = {"images": 2}
+    return chrome_options
