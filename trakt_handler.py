@@ -3,6 +3,7 @@ from trakt import init
 import trakt.core
 from trakt.tv import TVShow
 from trakt.sync import get_history
+from trakt.tv import studios
 from time import sleep
 from credentials import *
 from fuzzywuzzy import process
@@ -35,16 +36,19 @@ def search_show(show_title, silent):
         show = search_res[0]
     elif len(search_res) > 1:
         for res in search_res:
-            # print(f" {res.title} {res.year} {res.seasons} {res.progress}")
             if res.progress["completed"] >= min_viewed:
                 show = res
-    # else:
-        if not show:
-            # Verwende FuzzyWuzzy, um das beste Ergebnis zu erhalten
-            best_match, score = process.extractOne(show_title, [title.title for title in search_res])
+                break
 
-            print(f"Best Match: {best_match}, Score: {score}")
-            # similarity_score = fuzz.ratio(res, show_title)
+        if not show:
+            az_studios = ['Amazon Studios', '3 Arts Entertainment']
+            for res in search_res:
+                l_studios = studios(res)
+                for studio in l_studios:
+                    for az_studio in az_studios:
+                        if az_studio in studio["name"]:
+                            show = res
+                            break
 
     if not show:
         if silent == True:
