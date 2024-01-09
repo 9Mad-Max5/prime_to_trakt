@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 
 # script_path = os.path.abspath(sys.argv[0])
 
-def crawl_amazon(page, username, password, totp=None):
+def crawl_amazon(page, username, password, totp=None, full=False):
     sel_timeout = 60
     device_id = gethostname()  # Automatisch die Hostname als Device ID verwenden
     cookie_filename = f'{device_id}_{username}_cookies.pkl'
@@ -26,11 +26,12 @@ def crawl_amazon(page, username, password, totp=None):
     # driver.get(page)
 
     # driver = webdriver.Chrome()
-    chrome_options = Options()
+    # chrome_options = Options()
     # chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--no-sandbox")
+    # chrome_options.add_argument("--no-sandbox")
+    # chrome_options.add_argument("--window-size=1920,1080")  
 
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(options=set_chrome_options())
 
     if os.path.exists(cookie_filename):
         load_cookies(driver, cookie_filename)
@@ -59,16 +60,17 @@ def crawl_amazon(page, username, password, totp=None):
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-automation-id="watch-history"]'))
     )
 
-   # Scrollen für 10 Sekunden
-    scroll_duration = 10  # in Sekunden
+    if full:
+        # Scrollen für 10 Sekunden
+        scroll_duration = 10  # in Sekunden
 
-    # Startzeitpunkt
-    start_time = time.time()
+        # Startzeitpunkt
+        start_time = time.time()
 
-    while time.time() - start_time < scroll_duration:
-        # Führe JavaScript-Code aus, um um eine bestimmte Entfernung zu scrollen
-        driver.execute_script('window.scrollBy(0, 500);')  # Hier 500 ist die Vertikale Scroll-Entfernung
-        time.sleep(0.5)  # Wartezeit in Sekunden zwischen den Scroll-Schritten
+        while time.time() - start_time < scroll_duration:
+            # Führe JavaScript-Code aus, um um eine bestimmte Entfernung zu scrollen
+            driver.execute_script('window.scrollBy(0, 500);')  # Hier 500 ist die Vertikale Scroll-Entfernung
+            time.sleep(0.5)  # Wartezeit in Sekunden zwischen den Scroll-Schritten
 
     # Warte bis mindestens eine Checkbox gefunden wird
     checkboxes = WebDriverWait(watch_history_div, sel_timeout).until(
@@ -212,10 +214,11 @@ def set_chrome_options() -> Options:
     Chrome options for headless browser is enabled.
     """
     chrome_options = Options()
-    # chrome_options.add_argument("--headless")
-    # chrome_options.add_argument("--no-sandbox")
-    # chrome_options.add_argument("--disable-dev-shm-usage")
-    # chrome_prefs = {}
-    # chrome_options.experimental_options["prefs"] = chrome_prefs
-    # chrome_prefs["profile.default_content_settings"] = {"images": 2}
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--window-size=1920,1080")  
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_prefs = {}
+    chrome_options.experimental_options["prefs"] = chrome_prefs
+    chrome_prefs["profile.default_content_settings"] = {"images": 2}
     return chrome_options

@@ -10,9 +10,9 @@ page = "https://www.amazon.com/gp/video/settings/watch-history"
 # script_path = os.path.abspath(sys.argv[0])
 
 
-soup = crawl_amazon(page=page, username=username, password=password, totp=totp)
+soup = crawl_amazon(page=page, username=username, password=password, totp=totp, full=True)
 serien = parse_tv(soup=soup)
 filme = parse_movie(soup=soup)
 
-# import_dict(serien, tr_username, silent=False)
+import_dict(serien, tr_username, silent=False)
 import_dict(filme, tr_username, silent=False)
