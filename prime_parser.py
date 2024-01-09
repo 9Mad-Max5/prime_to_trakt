@@ -44,6 +44,7 @@ def parse_tv(soup):
 
             try:
                 serie, staffel = extract_ser_sn(serie_staffel)
+                serie = sanatize(serie)
             except:
                 special_o_movie = True
 
@@ -72,3 +73,46 @@ def parse_tv(soup):
                         Serien[serie].staffeln[staffel].add_episode(nummer=folgennummer, titel=folgentitel, datum=datum_mittags)
 
     return Serien
+
+def parse_movie(soup):
+    # Setze das Locale auf Deutsch
+    locale.setlocale(locale.LC_TIME, 'de_DE')
+    
+    history_items = soup.find("div", {"data-automation-id": "activity-history-items"})
+    items = history_items.find_all("li")
+
+    date = None
+    Filme = {}
+
+    for item in items:
+        # Datum extrahieren
+        found_date = False
+
+        try:
+            date_element = item.find("div", {"class": "RdNoU_"})
+            date = date_element.text.strip()
+            found_date = True
+        except:
+            found_date = False
+
+        if not found_date:
+            found_movie = False
+
+            try:
+                title_element = item.find("div", {"class": "t2z+aJ"})
+                movie = title_element.text.strip()
+                movie = sanatize(movie)
+                found_movie = True
+            except:
+                found_movie = False
+            
+            if found_movie:
+                # Konvertiere den String in ein datetime-Objekt
+                datum_obj = datetime.strptime(date, "%d. %B %Y")
+                # Setze die Uhrzeit auf 12:00 Uhr mittags
+                datum_mittags = datetime.combine(datum_obj.date(), time(12, 0))
+
+                if not movie in Filme:
+                    Filme[movie] = Film(movie, datum_mittags)
+
+    return Filme

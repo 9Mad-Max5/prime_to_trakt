@@ -15,6 +15,7 @@ class Staffel:
             self.episoden[nummer] = Episode(nummer, titel, datum)
 
 class Serie:
+    """A Class representing a TV Show object."""
     def __init__(self, name):
         self.name = name
         self.staffeln = {}
@@ -25,6 +26,7 @@ class Serie:
             self.staffeln[staffel] = Staffel(staffel)
 
 class Film:
+    """A Class representing a Movie object."""
     def __init__(self, name, datum):
         self.name = name
         self.datum = datum

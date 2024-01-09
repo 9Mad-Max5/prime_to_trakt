@@ -1,4 +1,13 @@
 import re
+from translation_dict import prime_replace_naming
+
+def sanatize(title):
+    sanatizer = [" [dt./OV]", " [OV]", " [OV/OmU]"]
+    for s in sanatizer:
+        if s in title:
+            bereinigter_titel = title.replace(s, '')
+            break
+    return bereinigter_titel
 
 
 def extract_ser_sn(name):
@@ -9,13 +18,6 @@ def extract_ser_sn(name):
         re.compile(r"(.+) - Season (\d+)"),
         re.compile(r"(.+) Staffel (\d+)"),
     ]
-    # name = name.replace(':', '')
-    prime_replace_naming = {
-        "The Grand Tour presents…": "The Grand Tour - Staffel 4",
-        "Top Gear: Apocalypse [OV/OmU]": "Top Gear Apocalypse - Staffel 1",
-        "James May: Unser Mann in Japan": "James May Unser Mann in Japan - Staffel 1",
-    }
-    # prime_replace_naming = {'The Grand Tour presents…':'The Grand Tour - Staffel 4'}
 
     if name in prime_replace_naming:
         name = prime_replace_naming[name]
